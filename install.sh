@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-MYCLI_VERSION="0.1.0"
+MYCLI_VERSION="v0.1.0"
 MYCLI_DIR="$HOME/.mycli"
-MYCLI_PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/gitcommitshow/cli-py/v$MYCLI_VERSION/cli.py"
+MYCLI_PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/gitcommitshow/cli-py/$MYCLI_VERSION/cli.py"
 
 # Function to check if a command exists
 command_exists() {
