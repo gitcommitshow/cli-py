@@ -43,27 +43,28 @@ add_to_shell_profile() {
 
 # Function to handle installation
 install_mycli() {
-    echo "Installing mycli..."
-    download_python_script
-    add_to_shell_profile
-    echo "mycli installed successfully."
+    if [ ! -f "$MYCLI_DIR/cli.py" ]; then
+        echo "Installing mycli..."
+        download_python_script
+        add_to_shell_profile
+        echo "mycli installed successfully."
+    fi
 }
 
-# Define the mycli function for immediate use in the current session
+# Define the mycli function
 mycli() {
     case "$1" in
         --version)
             echo "mycli version $MYCLI_VERSION"
             ;;
-        install)
-            install_mycli
-            ;;
         *)
+            # Perform automatic installation if necessary
+            install_mycli
             # Pass all parameters to the Python script
             if [ -f "$MYCLI_DIR/cli.py" ]; then
                 python3 "$MYCLI_DIR/cli.py" "$@"
             else
-                echo "Error: mycli is not installed. Run 'mycli install' to install."
+                echo "Error: Unable to locate mycli. Please check your installation."
                 exit 1
             fi
             ;;
