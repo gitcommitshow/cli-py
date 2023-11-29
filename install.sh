@@ -2,7 +2,7 @@
 
 MYCLI_VERSION="0.1.0"
 MYCLI_DIR="$HOME/.mycli"
-MYCLI_PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/gitcommitshow/cli-py/main/cli.py"
+MYCLI_PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/gitcommitshow/cli-py/v$MYCLI_VERSION/cli.py"
 
 # Function to check if a command exists
 command_exists() {
@@ -13,9 +13,9 @@ command_exists() {
 download_python_script() {
   mkdir -p "$MYCLI_DIR"
   if command_exists curl; then
-    curl -L "$MYCLI_PYTHON_SCRIPT_URL" -o "$MYCLI_DIR/api.py"
+    curl -L "$MYCLI_PYTHON_SCRIPT_URL" -o "$MYCLI_DIR/cli.py"
   elif command_exists wget; then
-    wget "$MYCLI_PYTHON_SCRIPT_URL" -O "$MYCLI_DIR/api.py"
+    wget "$MYCLI_PYTHON_SCRIPT_URL" -O "$MYCLI_DIR/cli.py"
   else
     echo "Error: curl or wget is required to download the script."
     exit 1
@@ -24,7 +24,7 @@ download_python_script() {
 
 # Function to add mycli to the shell profile for automatic sourcing
 add_to_shell_profile() {
-    local mycli_function="mycli() { python3 $MYCLI_DIR/api.py \"\$@\"; }"
+    local mycli_function="mycli() { python3 $MYCLI_DIR/cli.py \"\$@\"; }"
     local added=false
     for profile in "$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.zshrc" "$HOME/.profile"; do
         if [ -f "$profile" ]; then
@@ -60,8 +60,8 @@ mycli() {
             ;;
         *)
             # Pass all parameters to the Python script
-            if [ -f "$MYCLI_DIR/api.py" ]; then
-                python3 "$MYCLI_DIR/api.py" "$@"
+            if [ -f "$MYCLI_DIR/cli.py" ]; then
+                python3 "$MYCLI_DIR/cli.py" "$@"
             else
                 echo "Error: mycli is not installed. Run 'mycli install' to install."
                 exit 1
