@@ -12,11 +12,11 @@ The install mechanism is inspired from [nvm](https://github.com/nvm-sh/nvm)
 ## How to install and update
 
 ```bash
-curl -o- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.1.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.2.0/install.sh | bash
 ```
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.1.0/install.sh| bash
+wget -qO- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.2.0/install.sh| bash
 ```
 
 Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.mycli`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
