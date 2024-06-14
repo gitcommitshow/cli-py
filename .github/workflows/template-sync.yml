@@ -11,7 +11,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      actions: write
 
     steps:
       # To use this repository's private action, you must check out the repository
@@ -27,3 +26,5 @@ jobs:
         with:
           source_repo_path: gitcommitshow/opensource-template
           upstream_branch: main # defaults to main
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
