@@ -25,6 +25,5 @@ jobs:
         uses: AndreasAugustin/actions-template-sync@v2
         with:
           source_repo_path: gitcommitshow/opensource-template
-          upstream_branch: main # defaults to main
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          upstream_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
