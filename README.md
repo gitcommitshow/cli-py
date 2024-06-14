@@ -1,35 +1,60 @@
-# Cli-py
+<!-- Allow this file to not have a first line heading -->
+<!-- markdownlint-disable-file MD041 no-emphasis-as-heading -->
 
-## A starter kit to create CLI using Python
+<!-- inline html -->
+<!-- markdownlint-disable-file MD033 -->
 
-It solves two problems
+<div align="center">
 
-1. Creating a python script `cli.py` that can be run as `python cli.py cmd1 --param`
-2. Install script that enables installation via a simple command such as `curl /url/to/install.sh | bash` and simplifies previous cli usage to `mycli cmd1 --param`
+<!--- FIXME: Pick an emoji and name your project! --->
+# `🌻 opensource-template`
 
-The install mechanism is inspired from [nvm](https://github.com/nvm-sh/nvm)
+<!--- FIXME: Write short catchy description/tagline of project --->
+**Template for creating new open source repositories that follow the Embark open source guidelines**
 
-## How to install and update
+<!--- FIXME: Update crate, repo and CI workflow names here! Remove any that are not relevant --->
 
-```bash
-curl -o- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.2.0/install.sh | bash
-```
+[![Embark](https://img.shields.io/badge/embark-open%20source-blueviolet.svg)](https://embark.dev)
+[![Embark](https://img.shields.io/badge/discord-ark-%237289da.svg?logo=discord)](https://discord.gg/dAuKfZS)
+[![Crates.io](https://img.shields.io/crates/v/rust-gpu.svg)](https://crates.io/crates/rust-gpu)
+[![Docs](https://docs.rs/rust-gpu/badge.svg)](https://docs.rs/rust-gpu)
+[![Git Docs](https://img.shields.io/badge/git%20main%20docs-published-blue)](https://embarkstudios.github.io/presser/presser/index.html)
+[![dependency status](https://deps.rs/repo/github/EmbarkStudios/rust-gpu/status.svg)](https://deps.rs/repo/github/EmbarkStudios/rust-gpu)
+[![Build status](https://github.com/EmbarkStudios/physx-rs/workflows/CI/badge.svg)](https://github.com/EmbarkStudios/physx-rs/actions)
+</div>
 
-```bash
-wget -qO- https://raw.githubusercontent.com/gitcommitshow/cli-py/v0.2.0/install.sh| bash
-```
+## TEMPLATE INSTRUCTIONS
 
-Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.mycli`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
+1. Create a new repository under EmbarkStudios using this template.
+1. **Title:** Change the first line of this README to the name of your project, and replace the sunflower with an emoji that represents your project. 🚨 Your emoji selection is critical.
+1. **Badges:** In the badges section above, change the repo name in each URL. If you are creating something other than a Rust crate, remove the crates.io and docs badges (and feel free to add more appropriate ones for your language).
+1. **CI:** In `./github/workflows/` rename `rust-ci.yml` (or the appropriate config for your language) to `ci.yml`. And go over it and adapt it to work for your project
+    - If you aren't using or customized the CI workflow, also see the TODO in `.mergify.yml`
+    - If you want to use the automatic rustdoc publishing to github pages for git main, see `rustdoc-pages.yml`
+1. **Issue & PR Templates**: Review the files in `.github/ISSUE_TEMPLATE` and `.github/pull_request_template`. Adapt them
+to suit your needs, removing or re-wording any sections that don't make sense for your use case.
+1. **CHANGELOG.md:** Change the `$REPO_NAME` in the links at the bottom to the name of the repository, and replace the example template lines with the actual notes for the repository/crate.
+1. **release.toml:** in `./release.toml` change the `$REPO_NAME` to the name of the repository
+1. **Cleanup:** Remove this section of the README and any unused files (such as configs for other languages) from the repo.
 
-#### Troubleshooting
+## Contributing
 
-After running the install script, if you get `mycli: command not found` or see no feedback from your terminal after you type `command -v nvm`, simply close your current terminal, open a new terminal, and try verifying again.
-Alternatively, you can run the following commands for the different shells on the command line:
+[![Contributor Covenant](https://img.shields.io/badge/contributor%20covenant-v1.4-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-*bash*: `source ~/.bashrc`
+We welcome community contributions to this project.
 
-*zsh*: `source ~/.zshrc`
+Please read our [Contributor Guide](CONTRIBUTING.md) for more information on how to get started.
+Please also read our [Contributor Terms](CONTRIBUTING.md#contributor-terms) before you make any contributions.
 
-*ksh*: `. ~/.profile`
+Any contribution intentionally submitted for inclusion in an Embark Studios project, shall comply with the Rust standard licensing model (MIT OR Apache 2.0) and therefore be dual licensed as described below, without any additional terms or conditions:
 
-These should pick up the `mycli` command.
+### License
+
+This contribution is dual licensed under EITHER OF
+
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+
+at your option.
+
+For clarity, "your" refers to Embark or any other licensee/user of the contribution.
