@@ -1,0 +1,4 @@
+.gitignore
+.templatesyncignore
+README.md
+.github/CODEOWNERS
